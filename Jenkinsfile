@@ -57,5 +57,14 @@ pipeline {
                 sh 'sudo runuser -l cloudadmin -c "/var/lib/jenkins/workspace/test/apache-tomcat-8.5.24/bin/startup.sh"'
             }
         }*/
+
+          stage('Scan') {
+      steps {
+   withSonarQubeEnv(credentialsId:'sonarqube-sever-token-ID' , installationName: 'SonarQube_Server') {
+      sh "mvn clean verify sonar:sonar -Dsonar.projectKey=sonarqube-test -Dsonar.projectName='sonarqube-test'"
+    }
+ 
+      }
+    }
     }
     }    
