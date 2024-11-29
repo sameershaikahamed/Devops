@@ -7,7 +7,7 @@ pipeline {
                 //checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Rahul-training/Devops.git']])
            // }
        // }
-     stage('Install Maven Build Tool') {
+     /*stage('Install Maven Build Tool') {
             steps { 
                 sh 'wget https://dlcdn.apache.org/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.tar.gz'
                 sh 'tar -xzvf /var/lib/jenkins/workspace/test/apache-maven-3.9.4-bin.tar.gz'
@@ -56,6 +56,6 @@ pipeline {
                 sh 'sudo cp addressbook/addressbook_main/target/addressbook.war apache-tomcat-8.5.24/webapps/'
                 sh 'sudo runuser -l cloudadmin -c "/var/lib/jenkins/workspace/test/apache-tomcat-8.5.24/bin/startup.sh"'
             }
-        }
+        }*/
     }
     }    
